@@ -1,6 +1,5 @@
 # meta-ampere
-A collection of  yocto layers required to build the image for the board ZCU102 in the AMPERE project](https://ampere-euproject.eu/).
-
+A collection of yocto layers required to build the image for the ZCU102 board used in the AMPERE project](https://ampere-euproject.eu/).
 
 This repository will consist of the following git submodules:
 - [meta-fred](https://github.com/fred-framework/meta-fred): FRED is a framework to support the design, development, and execution of predictable software on FPGA system-on-chips platforms; 
