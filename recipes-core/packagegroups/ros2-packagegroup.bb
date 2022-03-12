@@ -8,8 +8,6 @@ inherit ros_distro_${ROS_DISTRO}
 
 PACKAGES = "${PN}"
 
-RDEPENDS_${PN} =
-
 ROS_SYSROOT_BUILD_DEPENDENCIES = " \
     ament-lint-auto \
     ament-cmake-auto \
@@ -114,7 +112,7 @@ IMAGE_INSTALL_append = " \
     glibc-utils \
     localedef \
     rt-tests \
-    stress \
+    stress-ng \
     xrt-dev \
     xrt \
     zocl \
@@ -122,6 +120,8 @@ IMAGE_INSTALL_append = " \
     opencl-clhpp-dev \
     ${ROS_SYSROOT_BUILD_DEPENDENCIES} \
 "
+
+#PREFERRED_VERSION_stress-ng = "0.13.09"
 
 IMAGE_LINGUAS = "en-us"
 GLIBC_GENERATE_LOCALES = "en_US.UTF-8"

@@ -11,6 +11,8 @@ petalinux-create -t project -s $bsp_file -n $proj_name
 cd $proj_name
 petalinux-config --silentconfig
 cd build/
+## ATTENTION !!! here you have to point to your own 'downloads' and 'sstate-cache' dirs.
+# if you dont have them, just comment these two lines
 ln -s /ssd/work/petalinux/2020.2/shared/zynqmp/downloads .
 ln -s /ssd/work/petalinux/2020.2/shared/zynqmp/sstate-cache .
 cd ..
