@@ -24,8 +24,22 @@ repo sync
 # load petalinux configuration
 cd ../..
 cp $defconf_file project-spec/configs/config
+
+# set the ROS version
+cat >> build/conf/bblayers.conf<< EOF
+# define the ROS 2 Yocto target release
+ROS_OE_RELEASE_SERIES = "zeus"
+
+# define ROS 2 distro
+ROS_DISTRO = "foxy"
+EOF
+
+# configure the project
 petalinux-config --silentconfig 
 
+# build
 petalinux-build -c retis-dev-image
+
+# pack
 cd images/linux
 petalinux-package --boot --force --fsbl zynqmp_fsbl.elf --fpga system.bit --pmufw pmufw.elf --atf bl31.elf --u-boot u-boot.elf
