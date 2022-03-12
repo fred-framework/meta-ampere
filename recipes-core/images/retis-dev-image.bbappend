@@ -1,4 +1,4 @@
-require ${COREBASE}/../meta-retis/recipes-core/images/retis-dev-image.bb
+require ${TOPDIR}/../components/ext_source/meta-retis/recipes-core/images/retis-dev-image.bb
 
 SUMMARY = "A image including a bare-minimum installation of ROS 2 and including some basic pub/sub examples. It includes two DDS middleware implementations, FastDDS and Cyclone DDS"
 DESCRIPTION = "${SUMMARY}"
@@ -110,14 +110,17 @@ IMAGE_INSTALL_append = " \
     glibc-utils \
     localedef \
     rt-tests \
-    stress \
     xrt-dev \
     xrt \
+    stress-ng \
     zocl \
     opencl-headers-dev \
     opencl-clhpp-dev \
     ${ROS_SYSROOT_BUILD_DEPENDENCIES} \
 "
 
+PREFERRED_VERSION_stress-ng = "0.13.09"
+
 IMAGE_LINGUAS = "en-us"
 GLIBC_GENERATE_LOCALES = "en_US.UTF-8"
+
