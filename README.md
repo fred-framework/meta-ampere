@@ -10,6 +10,33 @@ Besides the default Xilinx layers, this Petalinux project consists of these addi
 - `meta-openmp`: **TODO** create Yocto layer for OpenMP based tools from BSC;
 - `meta-extrae`: **TODO** create Yocto layer for [extrae](https://github.com/bsc-performance-tools/extrae);
 
+<!---
+# TODO: create recipe for PAPI and Extrae
+# extrae depedencies
+sudo apt-get install libunwind-dev libxml2-dev libzip-dev
+
+# download the source code
+git clone https://bitbucket.org/icl/papi.git
+git clone https://github.com/SSSA-ampere/extrae.git
+https://gitlab.bsc.es/ampere-sw/wp2/extrae
+
+cd papi/src
+./configure
+make -j 8 
+sudo make install
+cd ../..
+
+cd extrae
+autoconf
+./configure
+make -j 8 
+sudo make install
+cd ../..
+
+# TODO create recipe for the version of libomp used by BSC
+https://gitlab.bsc.es/ampere-sw/wp2/llvm/-/tree/master/openmp
+--->
+
 ## Running the script
 
 Go to the directory where the petalinux project will be generated and run:
