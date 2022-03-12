@@ -306,4 +306,5 @@ CONFIG_USER_LAYER_2="${PROOT}/components/ext_source/meta-ros/meta-ros-backports-
 CONFIG_USER_LAYER_3="${PROOT}/components/ext_source/meta-ros/meta-ros-common"
 CONFIG_USER_LAYER_4="${PROOT}/components/ext_source/meta-ros/meta-ros2"
 CONFIG_USER_LAYER_5="${PROOT}/components/ext_source/meta-ros/meta-ros2-foxy"
-CONFIG_USER_LAYER_6=""
+CONFIG_USER_LAYER_6="${PROOT}/components/ext_source/meta-ampere"
+CONFIG_USER_LAYER_7=""
