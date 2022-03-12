@@ -1,16 +1,14 @@
 # meta-ampere
 
-This is small Yocto Layer, and also a script, that configures a Petalinux project to generate the Linux image for the ZCU102 board used in the [AMPERE project](https://ampere-euproject.eu/).
+This is small Yocto Layer, and also a script, that configures a Petalinux 2020.2 project to generate the Linux image for the ZCU102 board used in the [AMPERE project](https://ampere-euproject.eu/).
 
-Besides the default Xilinx layers, this Petalinux project consists of these additional Layers:
+Besides the default Xilinx layers, this Petalinux project consists of these additional Layers downloaded by a [manifest file](https://github.com/sssa-ampere/zcu102-manifest):
 - [meta-fred](https://github.com/fred-framework/meta-fred): FRED is a framework to support the design, development, and execution of predictable software on FPGA system-on-chips platforms; 
 - [meta-retis](https://github.com/fred-framework/meta-retis): Linux kernel ans rootfs customized for realtime development;
-- [meta-ros](https://github.com/sssa-ampere/meta-ros): ROS2 middleware used by the AMPERE project demonstrators;
+- [meta-ros](https://github.com/ros/meta-ros/tree/zeus): ROS2 (foxy) middleware used by the AMPERE project demonstrators;
 - [meta-dnn](https://github.com/sssa-ampere/meta-dnn): Vitis AI setup for the ZCU102 board;
 - `meta-openmp`: **TODO** create Yocto layer for OpenMP based tools from BSC;
 - `meta-extrae`: **TODO** create Yocto layer for [extrae](https://github.com/bsc-performance-tools/extrae);
-
-This repository will also have a [repo manifest file](https://git-repo.info/en/docs/multi-repos/manifest-format/), like this [one](https://github.com/Xilinx/yocto-manifests), to easy the setup generation. All the Linux image generation is done with Petalinux 2020.2.
 
 ## Running the script
 
