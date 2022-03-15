@@ -47,6 +47,59 @@ Go to the directory where the petalinux project will be generated and run:
     # wget bsp
     $ ./config.sh <prj-name> <full-path/bsp> <full-path/pt-config>
 
+## Testing ROS2 on the Board
+
+
+On Terminal 1:
+
+```
+$ source /usr/bin/ros_setup.bash
+$ ros2 run examples_rclcpp_minimal_publisher publisher_lambda
+```
+
+On Terminal 2: 
+
+```bash
+$ ros2 node list
+    /minimal_publisher
+$ ros2 node info /minimal_publisher
+    /minimal_publisher
+    Subscribers:
+        /parameter_events: rcl_interfaces/msg/ParameterEvent
+    Publishers:
+        /parameter_events: rcl_interfaces/msg/ParameterEvent
+        /rosout: rcl_interfaces/msg/Log
+        /topic: std_msgs/msg/String
+    Service Servers:
+        /minimal_publisher/describe_parameters: rcl_interfaces/srv/DescribeParameters
+        /minimal_publisher/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+        /minimal_publisher/get_parameters: rcl_interfaces/srv/GetParameters
+        /minimal_publisher/list_parameters: rcl_interfaces/srv/ListParameters
+        /minimal_publisher/set_parameters: rcl_interfaces/srv/SetParameters
+        /minimal_publisher/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    Service Clients:
+
+    Action Servers:
+
+    Action Clients:
+$ ros2 topic list
+    /parameter_events
+    /rosout
+    /topic
+```
+
+And finally,
+
+```
+$ source /usr/bin/ros_setup.bash
+$ ros2 run examples_rclcpp_minimal_subscriber subscriber_lambda
+```
+
+## References
+
+ - [ROS 2 in Kria kv260 with Petalinux 2021.2](https://www.hackster.io/jlamperez10/ros-2-in-kria-kv260-with-petalinux-2021-2-92ec3a). Most of the ROS2 and petalinux setup instructions came from this tutorial;
+ - 
+
 ## Authors
 
  - Alexandre Amory (Frebruary 2022), [Real-Time Systems Laboratory (ReTiS Lab)](https://retis.santannapisa.it/), [Scuola Superiore Sant'Anna (SSSA)](https://www.santannapisa.it/), Pisa, Italy.
