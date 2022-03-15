@@ -9,10 +9,8 @@ DESCRIPTION = "energy sensor nodes"
 AUTHOR = "Alexandre Amory <alexandre.amory@santannapisa.it>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
-#         "Apache License 2.0"
-LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
+LICENSE = "GPLv3"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 ROS_CN = "demos"
 ROS_BPN = "energy_sensors"
@@ -47,7 +45,7 @@ DEPENDS = "${ROS_BUILD_DEPENDS} ${ROS_BUILDTOOL_DEPENDS}"
 # don't) so that they're guaranteed to have been staged should this package appear in another's DEPENDS.
 DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
-RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
+#RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
 #ROS_BRANCH ?= "branch=release/foxy/dummy_sensors"
 ROS_BRANCH ?= "branch=ros2"

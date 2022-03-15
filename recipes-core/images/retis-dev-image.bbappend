@@ -121,6 +121,10 @@ IMAGE_INSTALL_append = " \
 
 PREFERRED_VERSION_stress-ng = "0.13.09"
 
+IMAGE_INSTALL_append = " \
+    energy-sensors \
+"
+
 IMAGE_LINGUAS = "en-us"
 GLIBC_GENERATE_LOCALES = "en_US.UTF-8"
 
