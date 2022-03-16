@@ -49,9 +49,15 @@ DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
 #ROS_BRANCH ?= "branch=release/foxy/dummy_sensors"
 ROS_BRANCH ?= "branch=ros2"
+# use this line if you want to get the latest commit of the branch
+SRCREV = "${AUTOREV}"
+# or use this line to get a specific commit
+#SRCREV = "520643bce6f5e3e74fcc4bd72c33bfc073ae9395"
 SRC_URI = "git://github.com/amamory/power-sampler;${ROS_BRANCH};protocol=https"
-SRCREV = "520643bce6f5e3e74fcc4bd72c33bfc073ae9395"
 S = "${WORKDIR}/git"
+
+# change the version
+PV = "1.0+git${SRCPV}"
 
 ROS_BUILD_TYPE = "ament_cmake"
 
